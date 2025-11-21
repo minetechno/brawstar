@@ -17,7 +17,7 @@ $trophyIcons = getIconsByCategory('trophy');
 <body>
     <header>
         <nav>
-            <a href="index.php" class="btn-home">← Voltar para Home</a>
+            <a href="index.php" class="btn-home">← Voltar para o Park</a>
         </nav>
     </header>
 
