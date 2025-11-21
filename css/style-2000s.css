@@ -1,0 +1,262 @@
+/* Estilo Anos 2000 - Página de Ícones */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Play:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(0, 255, 0, 0.1) 0%, transparent 50%);
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 50, 100, 0.7));
+    border-bottom: 2px solid #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent,
+        #00ffff 20%,
+        #ff00ff 40%,
+        #00ff00 60%,
+        #00ffff 80%,
+        transparent
+    );
+    animation: scanline 3s linear infinite;
+}
+
+@keyframes scanline {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.btn-home {
+    background: linear-gradient(135deg, #003366, #006699);
+    color: #00ffff;
+    padding: 12px 35px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-home:hover {
+    background: linear-gradient(135deg, #006699, #0099cc);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+/* Título Principal */
+.main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 80px;
+    text-align: center;
+    margin: 40px 0;
+    color: #00ffff;
+    text-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff,
+        0 0 40px #0099ff,
+        0 0 70px #0099ff,
+        0 0 80px #0099ff,
+        0 0 100px #0099ff;
+    animation: neonPulse 2s ease-in-out infinite;
+    font-weight: 900;
+    letter-spacing: 5px;
+}
+
+@keyframes neonPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Seção de Categorias */
+.category-section {
+    margin-bottom: 60px;
+    background: rgba(0, 50, 100, 0.3);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow:
+        0 8px 32px 0 rgba(0, 255, 255, 0.2),
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.category-section h2 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: #ff00ff;
+    text-shadow:
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff,
+        0 0 30px #ff00ff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-bottom: 2px solid #ff00ff;
+    padding-bottom: 15px;
+}
+
+/* Grid de Ícones */
+.icons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.icon-card {
+    background: linear-gradient(135deg,
+        rgba(0, 100, 200, 0.4),
+        rgba(100, 0, 200, 0.4)
+    );
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid rgba(0, 255, 255, 0.5);
+    box-shadow:
+        0 8px 16px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(0, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.icon-card:hover::before {
+    left: 100%;
+}
+
+.icon-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    border-color: #00ffff;
+    box-shadow:
+        0 12px 24px rgba(0, 0, 0, 0.7),
+        0 0 30px rgba(0, 255, 255, 0.6);
+}
+
+.icon-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.3));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    border: 3px solid rgba(0, 255, 255, 0.6);
+    box-shadow:
+        0 0 15px rgba(0, 255, 255, 0.4),
+        inset 0 0 15px rgba(0, 255, 255, 0.2);
+    position: relative;
+}
+
+.icon-image img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+}
+
+.icon-card h3 {
+    font-size: 18px;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(180deg, rgba(0, 50, 100, 0.7), rgba(0, 0, 0, 0.9));
+    border-top: 2px solid #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    padding: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 16px;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+/* Efeito Matrix no fundo */
+@keyframes matrix {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
+
+.matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.1;
+}

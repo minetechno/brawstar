@@ -1,0 +1,36 @@
+# ========================================
+# CONFIGURAÇÃO DO VIRTUALHOST
+# ========================================
+# Cole este código no final do arquivo httpd-vhosts.conf
+# Localização: C:\wamp64\bin\apache\apache2.x.x\conf\extra\httpd-vhosts.conf
+# Ou acesse via: WAMP > Apache > httpd-vhosts.conf
+
+<VirtualHost *:80>
+    ServerName brawstar.test
+    DocumentRoot "C:/wamp64/www/brawstar"
+
+    <Directory "C:/wamp64/www/brawstar">
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog "logs/brawstar-error.log"
+    CustomLog "logs/brawstar-access.log" common
+</VirtualHost>
+
+# ========================================
+# ARQUIVO HOSTS DO WINDOWS
+# ========================================
+# Adicione esta linha no arquivo hosts
+# Localização: C:\Windows\System32\drivers\etc\hosts
+# (Abra o Bloco de Notas como Administrador)
+
+127.0.0.1    brawstar.test
+
+# ========================================
+# APÓS ADICIONAR:
+# 1. Salve os arquivos
+# 2. Reinicie o WAMP
+# 3. Acesse: http://brawstar.test
+# ========================================
