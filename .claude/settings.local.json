@@ -8,7 +8,9 @@
       "Bash(/c/Windows/System32/drivers/etc/hosts)",
       "Bash(powershell -Command \"Add-Content -Path ''C:\\Windows\\System32\\drivers\\etc\\hosts'' -Value ''127.0.0.1 brawstar.test''\")",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
