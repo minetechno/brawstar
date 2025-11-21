@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mysql:*)",
+      "Bash(/c/wamp64/bin/mysql/mysql8.0.*/bin/mysql.exe)",
+      "Bash(/c/wamp64/bin/mysql/mysql9.1.0/bin/mysql.exe -u root -e \"SOURCE C:/wamp64/www/brawstar/database.sql\")",
+      "Bash(/c/wamp64/bin/mysql/mysql9.1.0/bin/mysql.exe:*)",
+      "Bash(/c/Windows/System32/drivers/etc/hosts)",
+      "Bash(powershell -Command \"Add-Content -Path ''C:\\Windows\\System32\\drivers\\etc\\hosts'' -Value ''127.0.0.1 brawstar.test''\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
