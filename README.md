@@ -41,9 +41,10 @@ brawstar/
 ├── js/
 │   └── main.js                # JavaScript principal (modais, animações)
 ├── images/
-│   ├── brawlers/              # Imagens dos personagens (200x200px)
-│   ├── skins/                 # Imagens das skins (150x150px)
-│   └── icons/                 # Ícones do jogo (100x100px)
+│   ├── brawlers/              # Imagens dos personagens (12 imagens PNG)
+│   ├── skins/                 # Imagens das skins (14 imagens PNG)
+│   ├── icons/                 # Ícones do jogo (para troféus e clubes)
+│   └── README.md              # Guia de organização de imagens
 ├── includes/
 │   ├── config.php             # Configuração do banco de dados
 │   └── functions.php          # Funções PHP (queries, helpers)
@@ -52,6 +53,9 @@ brawstar/
 ├── get_skins.php              # API AJAX para buscar skins
 ├── database.sql               # Script SQL principal (estrutura + dados)
 ├── add_more_brawlers.sql      # Script SQL com mais brawlers
+├── update-skins.sql           # Script SQL para atualizar skins
+├── download-images.php        # Script automático para baixar imagens
+├── DOWNLOAD-IMAGES.md         # Guia completo de download de imagens
 ├── .htaccess                  # Configurações Apache
 ├── configurar-hosts.bat       # Script para configurar arquivo hosts
 └── vhost-config.txt           # Template de VirtualHost
@@ -172,7 +176,7 @@ Adicione a linha:
 
 ## 📊 Dados Iniciais
 
-### Brawlers Cadastrados (10 iniciais)
+### Brawlers Cadastrados (10 no banco de dados)
 1. **Colt** - Atirador rápido com revólveres duplos
 2. **Maisie** - Atiradora de longo alcance
 3. **Amber** - Lança-chamas incendiária
@@ -184,14 +188,54 @@ Adicione a linha:
 9. **Shelly** - Atiradora com escopeta
 10. **Nita** - Invocadora de urso
 
-### Skins Cadastradas
-- **Colt:** Default, Real, Corsário, Outlaw
-- **Amber:** Default, de Gelo, Dourada
+### Imagens de Brawlers (12 imagens PNG - 1.7 MB total)
+✅ **Com imagens reais:**
+- Shelly (307 KB)
+- Colt (219 KB)
+- Brock (150 KB)
+- El Primo (176 KB)
+- 8-Bit (105 KB)
+- Nita (166 KB)
+- Spike (125 KB)
+- Leon (88 KB)
+- Crow (89 KB)
+- Carl (60 KB)
+- Gale (61 KB)
+- Sprout (97 KB)
 
-### Ícones Cadastrados
+**Fontes:** wonder-day.com, pngkey.com
+
+### Skins Cadastradas (14 skins - 908 KB total)
+✅ **Colt (4 skins):**
+- Rockstar Colt (89 KB)
+- Royal Agent Colt (70 KB)
+- Outlaw Colt (69 KB)
+- Corsair Colt (89 KB)
+
+✅ **Amber (4 skins):**
+- Amber Padrão (38 KB)
+- Amber de la Vega (27 KB)
+- True Silver Amber (45 KB)
+- True Gold Amber (42 KB)
+
+✅ **Shelly (3 skins):**
+- Bandita Shelly (56 KB)
+- Star Shelly (54 KB)
+- Witch Shelly (49 KB)
+
+✅ **El Primo (3 skins):**
+- El Rudo Primo (86 KB)
+- El Rey Primo (90 KB)
+- El Brown (73 KB)
+
+**Fonte:** zathong.com
+
+### Ícones Cadastrados (10 no banco de dados)
 - **Clubes:** LOUD
 - **Personagens:** El Primo, 8-Bit, Colt, Shelly, Nita
 - **Troféus:** Bronze, Prata, Ouro, Diamante
+
+**Nota:** Ícones ainda não possuem imagens reais (exibem emojis como fallback)
 
 ## 🔄 Fluxo de Dados
 
@@ -243,6 +287,33 @@ INSERT INTO icons (name, category, icon) VALUES
 - **Skins:** `brawler_skin.png` (ex: `colt_royal.png`, `amber_ice.png`)
 - **Ícones:** `icon_nome.png` (ex: `icon_loud.png`, `icon_trophy_gold.png`)
 
+### Download de Imagens
+
+#### Método Automático (Recomendado)
+Execute o script PHP para baixar imagens automaticamente:
+```
+http://brawstar.test/download-images.php
+```
+
+O script vai:
+- Baixar 10 imagens de brawlers automaticamente
+- Salvar em `images/brawlers/`
+- Exibir progresso em tempo real
+- Mostrar resumo ao final
+
+#### Método Manual
+Consulte o arquivo [DOWNLOAD-IMAGES.md](DOWNLOAD-IMAGES.md) para:
+- Links diretos de download de todas as imagens
+- Instruções para encontrar mais imagens
+- Recursos oficiais (Supercell Fan Kit)
+- Sites com PNG transparentes
+
+#### Fontes de Imagens
+- **Wonder-Day.com:** 100+ imagens de brawlers PNG transparentes
+- **Zathong.com:** Todas as skins com preços e descrições
+- **PNGKey/PNGWing:** Imagens alternativas de alta qualidade
+- **Supercell Fan Kit:** Recursos oficiais (requer login)
+
 ### Fallback
 Se a imagem não existir, o sistema exibe emojis:
 - Brawlers: 🎮
@@ -265,6 +336,14 @@ Se a imagem não existir, o sistema exibe emojis:
 - Em produção, configure usuário e senha específicos
 
 ## 🚀 Próximas Melhorias Possíveis
+
+### Conteúdo
+- [ ] Adicionar imagens para brawlers restantes (Amber, Maisie, Angelo, Fang)
+- [ ] Baixar imagens de ícones de troféus (Bronze, Silver, Gold, etc.)
+- [ ] Adicionar ícones de clubes brasileiros (LOUD, FURIA, paiN, INTZ)
+- [ ] Adicionar mais skins para outros brawlers
+- [x] ~~Imagens reais de brawlers~~ ✅ (12 imagens)
+- [x] ~~Imagens reais de skins~~ ✅ (14 skins)
 
 ### Funcionalidades
 - [ ] Sistema de busca de brawlers
